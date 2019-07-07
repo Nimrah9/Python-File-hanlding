@@ -1,0 +1,16 @@
+import csv
+
+with open("students.csv","w",newline="") as f:
+    data_handler = csv.writer(f,delimiter=",")
+    data_handler.writerow(["name","age","rollNo"])
+    data_handler.writerow(["nimrah", "20", "se-003"])
+    data_handler.writerow(["arooba fraud", "44", "se-011"])
+    data_handler.writerow(["mehwish tharki", "60", "se-034"])
+
+with open("students.csv","r") as f:
+    data_handler = csv.reader(f)
+    for data in data_handler:
+        if data[0] == "nimrah":
+            print("yes nimrah is there")
+        else:
+            print("person isnt there")
